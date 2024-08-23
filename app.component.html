@@ -1,0 +1,75 @@
+
+<!-- Event Through select tag -->
+
+<div class="container mt-5">
+  <h4>Task:- A</h4>
+  <form action="">
+    <div class="row mt-3">
+      <div class="col-sm-6 form-group">
+        <label for="fn">First Name</label>
+        <input type="text" id="fn" name="firstName" class="form-control form-control-sm">
+      </div>
+      <div class="col-sm-6 form-group">
+        <label for="ln">Last Name</label>
+        <input type="text" id="ln" name="lastName" class="form-control form-control-sm">
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-sm-6 form-group">
+        <label for="sl">How should we contact you?</label>
+        <select name="" id="sl" class="form-control form-control-sm" #selectedOption
+          (change)="onSelectClick(selectedOption.value)">
+          <option selected>Choose Option</option>
+          <option value="phone">phone</option>
+          <option value="email">email</option>
+        </select>
+      </div>
+      <div class="col-sm-6 form-group" *ngIf="showToPhone">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" class="form-control form-control-sm" name="phoneNumber">
+      </div>
+      <div class="col-sm-6 form-group" *ngIf="showToEmail">
+        <label for="email">Email Address</label>
+        <input type="text" id="email" class="form-control form-control-sm" name="emailAddress">
+      </div>
+    </div>
+  </form>
+
+  <!-- Radio button -->
+  <h4 class="my-5">Task:- B</h4>
+  <form>
+    <div class="row mt-3">
+      <div class="col-sm-6 form-group">
+        <label for="fn">First Name</label>
+        <input type="text" id="fn" name="firstName" class="form-control form-control-sm">
+      </div>
+      <div class="col-sm-6 form-group">
+        <label for="ln">Last Name</label>
+        <input type="text" id="ln" name="lastName" class="form-control form-control-sm">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-12">
+        <label for="sl">How should we contact you?</label>
+      </div>
+      <div class="col-sm-6 form-group">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input" value="phone"(change)="onRadioChange('phone')">
+          <label class="custom-control-label" for="customRadioInline1">Phone</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input" value="email"  (change)="onRadioChange('email')">
+          <label class="custom-control-label" for="customRadioInline2">Email</label>
+        </div>
+      </div>
+      <div class="col-sm-6 form-group" *ngIf="showToRadPhone">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" class="form-control form-control-sm" name="phoneNumber">
+      </div>
+      <div class="col-sm-6 form-group" *ngIf="showToRadEmail">
+        <label for="email">Email Address</label>
+        <input type="text" id="email" class="form-control form-control-sm" name="emailAddress">
+      </div>
+    </div>
+  </form>
+</div>
